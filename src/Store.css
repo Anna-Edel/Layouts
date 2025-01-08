@@ -8,7 +8,14 @@
 
 .icon {
   margin: 5% 0;
-  text-align: end;
+  cursor: pointer;
+}
+
+.view-switcher {
+  position: fixed;
+  top: 10px;
+  right: 460px;
+  z-index: 1000;
   cursor: pointer;
 }
 
@@ -16,6 +23,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: 60px;
 }
 
 .cards-view .card-el {
@@ -53,6 +61,11 @@
   text-transform: uppercase;
   font-weight: bold;
 }
+
+.list-view {
+  margin-top: 50px;
+}
+
 
 .list-view .button {
   margin-right: 10px;

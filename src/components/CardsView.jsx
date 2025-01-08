@@ -1,22 +1,24 @@
-import React from "react";
+import PropTypes from 'prop-types';
 
-export default function CardsView ({cards}){
-
-    return (
-        <div className='cards-view'>
-            {cards.map((card) => {
-                return (
-                    <div className="card-el">
-                        <h2 className='name'>{ card.name }</h2>
-                        <div className='color'>{ card.color }</div>
-                        <img className='img' src={ card.img } alt={ card.name }/>
-                        <div className="bottom">
-                            <span className='price'>${ card.price }</span>
-                            <div className='button'>add to cart</div>
-                        </div>
-                    </div>
-                );
-            })}
+const CardsView = ({ cards }) => {
+  return (
+    <div className="cards-view">
+      {cards.map((card, index) => (
+        <div key={card.id || index} className="card-el">
+          <img src={card.img} alt={card.name} />
+          <div className="bottom">
+            <h3>{card.name}</h3>
+            <span>{card.color}</span>
+            <span>${card.price}</span>
+          </div>
         </div>
-    );
-}
+      ))}
+    </div>
+  );
+};
+
+CardsView.propTypes = {
+  cards: PropTypes.array.isRequired,
+};
+
+export default CardsView;
